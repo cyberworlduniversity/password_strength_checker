@@ -313,10 +313,8 @@ STRENGTH_BARS  = {
 
 
 def mask_password(password: str) -> str:
-    """Show first 2 and last 1 chars, mask the rest."""
-    if len(password) <= 3:
-        return "*" * len(password)
-    return password[:2] + "*" * (len(password) - 3) + password[-1]
+    """Mask every character so reports never reveal password fragments."""
+    return "*" * len(password)
 
 
 def print_report(analysis: PasswordAnalysis) -> None:
