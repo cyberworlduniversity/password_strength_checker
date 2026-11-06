@@ -428,3 +428,48 @@ password_strength_checker/
 ---
 
 *Built with Python 3 — no external dependencies required.*
+
+
+## Repository Quick Start
+
+Clone this repository and enter its directory:
+
+```bash
+git clone https://github.com/cyberworlduniversity/password_strength_checker.git
+cd password_strength_checker
+```
+
+### Requirements and installation
+
+- Python 3.10+ is recommended.
+- No third-party packages are required by the documented project entry point.
+
+### Run
+
+```bash
+python password_checker.py
+```
+
+If the program presents command-line options, run `python password_checker.py --help` to view the options supported by the current version. Use a test target or sample input first.
+
+### Validate the source
+
+```bash
+python -m compileall -q .
+```
+
+Run locally; avoid pasting real passwords into shared terminals, screenshots, or logs.
+
+### Program flow
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Load configuration and input]
+    B --> C{Input valid?}
+    C -- No --> D[Show usage or validation error]
+    C -- Yes --> E[Run password strength checker analysis]
+    E --> F[Collect findings]
+    F --> G[Display or save results]
+    G --> H[Exit]
+    D --> H
+```
