@@ -1,10 +1,19 @@
 # 🔐 Password Strength Checker
 
+
+## Get this repository
+
+Clone the current project (this repository's canonical GitHub URL), then follow the installation and usage steps below.
+
+```bash
+git clone https://github.com/cyberworlduniversity/password_strength_checker.git
+cd password_strength_checker
+```
+
 > A Python tool that analyzes how strong a password is by checking **length**, **character variety**, **entropy**, and **common patterns** — classifying it as **Weak**, **Medium**, or **Strong**.
 
 ---
-
-## 📋 Table of Contents
+\n## 📋 Table of Contents
 
 1. [Overview](#overview)
 2. [Features](#features)
