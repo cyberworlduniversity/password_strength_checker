@@ -14,7 +14,7 @@ class PasswordPrivacyTests(unittest.TestCase):
     @patch("password_checker.getpass.getpass", side_effect=[" password with spaces ", "exit"])
     def test_interactive_input_preserves_spaces_without_echo(self, getpass_mock, report_mock):
         password_checker.run_interactive()
-        getpass_mock.assert_any_call("\\n  Enter password (input hidden): ")
+        getpass_mock.assert_any_call("\n  Enter password (input hidden): ")
         report_mock.assert_called_once()
         self.assertEqual(report_mock.call_args.args[0].password, " password with spaces ")
 
