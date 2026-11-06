@@ -12,7 +12,8 @@ Purpose : Classify passwords as Weak / Medium / Strong
 import math
 import re
 import string
-import sys
+import argparse
+import getpass
 from dataclasses import dataclass, field
 from typing import List, Tuple
 
@@ -365,12 +366,12 @@ def run_interactive() -> None:
 
     while True:
         try:
-            pwd = input("\n  Enter password: ").strip()
+            pwd = getpass.getpass("\n  Enter password (input hidden): ")
         except (KeyboardInterrupt, EOFError):
             print("\n\n  Goodbye! Stay secure 🔒\n")
             break
 
-        if pwd.lower() == "exit":
+        if pwd == "exit":
             print("\n  Goodbye! Stay secure 🔒\n")
             break
 
@@ -404,12 +405,11 @@ def run_demo() -> None:
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "--demo":
-            run_demo()
-        else:
-            # Single password passed as argument
-            result = analyze_password(sys.argv[1])
-            print_report(result)
+    parser = argparse.ArgumentParser(description="Analyze password strength without echoing password input.")
+    parser.add_argument("--demo", action="store_true", help="Run the built-in examples.")
+    args = parser.parse_args()
+
+    if args.demo:
+        run_demo()
     else:
         run_interactive()
