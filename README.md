@@ -13,7 +13,8 @@ cd password_strength_checker
 > A Python tool that analyzes how strong a password is by checking **length**, **character variety**, **entropy**, and **common patterns** — classifying it as **Weak**, **Medium**, or **Strong**.
 
 ---
-\n## 📋 Table of Contents
+
+## 📋 Table of Contents
 
 1. [Overview](#overview)
 2. [Features](#features)
